@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">solidcard</string>
+    <string name="title_activity_main">solidcard</string>
+    <string name="package_name">robert.solidcard.app</string>
+    <string name="custom_url_scheme">robert.solidcard.app</string>
+</resources>
