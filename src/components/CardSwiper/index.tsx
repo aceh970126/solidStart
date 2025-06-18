@@ -11,11 +11,13 @@ export default function CardSwiper() {
   const handleNext = () => {
     setActiveIndex((i) => (i + 1) % cards.length);
     setExpanded(false);
+    setFlipped(false);
   };
 
   const handlePrev = () => {
     setActiveIndex((i) => (i - 1 + cards.length) % cards.length);
     setExpanded(false);
+    setFlipped(false);
   };
 
   const toggleExpand = (index: any) => {
