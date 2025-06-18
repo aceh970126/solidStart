@@ -1,4 +1,5 @@
 import { For, createSignal } from "solid-js";
+import { cn } from "../../utils/utils";
 
 const cards = ["image1.png", "image2.png", "image3.png"];
 
@@ -22,6 +23,8 @@ export default function CardSwiper() {
       setExpanded(false);
       setActiveIndex(index);
       setFlipped(false);
+    } else if (expanded()) {
+      setFlipped(!flipped());
     } else {
       setExpanded(!expanded());
     }
@@ -39,7 +42,7 @@ export default function CardSwiper() {
 
           return (
             <div
-              class="absolute w-[200px] h-[200px] bg-white rounded-xl shadow-xl flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-in-out overflow-hidden"
+              class="[perspective:100rem] absolute w-[200px] h-[200px] bg-white flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-in-out"
               onClick={() => {
                 toggleExpand(i);
               }}
@@ -49,11 +52,27 @@ export default function CardSwiper() {
                 opacity: opacity(),
               }}
             >
-              <img
-                src={`/images/${card}`}
-                alt={card}
-                class="w-full h-full object-cover"
-              />
+              <div
+                class={cn(
+                  "relative size-full transition duration-500 [transform-style:preserve-3d]",
+                  flipped() && isActive() ? "[transform:rotateY(180deg)]" : ""
+                )}
+              >
+                <div class="absolute inset-0 size-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <img
+                    src="/images/back.png"
+                    alt="back"
+                    class="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
+                <div class="absolute inset-0 size-full [backface-visibility:hidden]">
+                  <img
+                    src={`/images/${card}`}
+                    alt={card}
+                    class="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
+              </div>
             </div>
           );
         }}
