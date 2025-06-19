@@ -69,11 +69,9 @@ export default function CardSwiper() {
                 )}
               >
                 <div class="absolute inset-0 size-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <img
-                    src="/images/back.png"
-                    alt="back"
-                    class="w-full h-full object-cover rounded-xl border border-gray-200"
-                  />
+                  <div class="w-full h-full rounded-xl bg-gray-500 flex justify-center items-center text-white font-extrabold">
+                    {i() + 1}
+                  </div>
                 </div>
                 <div class="absolute inset-0 size-full [backface-visibility:hidden]">
                   <img
@@ -95,7 +93,7 @@ export default function CardSwiper() {
         {"<"}
       </button>
       <button
-        class="absolute right-4 bottom-4 bg-blue-500 text-white px-4 py-2 rounded cursor-pointer flex justify-center items-center w-[40px] h-[40px] rounded-full hover:opacity-75 transition-all"
+        class="absolute right-4 bottom-4 bg-blue-500 text-white px-4 py-2 cursor-pointer flex justify-center items-center w-[40px] h-[40px] rounded-full hover:opacity-75 transition-all"
         onClick={handleNext}
       >
         {">"}
