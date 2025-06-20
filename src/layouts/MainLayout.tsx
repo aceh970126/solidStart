@@ -8,7 +8,7 @@ const MainLayout = (props: ParentProps) => {
       </header>
       {props.children}
       <footer class="absolute bottom-0 flex justify-center items-center w-full h-[40px] text-[12px] text-gray-600">
-        <p>SolidJS + MontionOne + TailwindCSS</p>
+        <p>SolidJS + MotionOne + TailwindCSS</p>
       </footer>
     </div>
   );
