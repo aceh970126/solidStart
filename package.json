@@ -13,6 +13,7 @@
     "@capacitor/cli": "^7.3.0",
     "@capacitor/core": "^7.3.0",
     "@capacitor/ios": "^7.3.0",
+    "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.10",
     "motion": "^12.18.1",
     "solid-js": "^1.9.5",

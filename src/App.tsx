@@ -1,12 +1,8 @@
 import "./App.css";
-import CardSwiper from "./components/CardSwiper";
+import Routes from "./routes";
 
 function App() {
-  return (
-    <div>
-      <CardSwiper />
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
